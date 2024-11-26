@@ -1,1 +1,106 @@
-To be updated....
+# Depression Prediction Model for Students - ML Zoomcamp 2024 (MidT Term)
+
+## Overview
+
+Depression Prediction Model project, developed as part of ML Zoomcamp 2024 midterm project. This project focuses on predicting the likelihood of depression among students using machine learning techniques. The model leverages a comprehensive dataset to analyze various factors influencing mental health in students.
+
+## Dataset Description
+
+The model uses the [Depression Student Dataset Prediction](https://www.kaggle.com/code/sameerk2004/depression-student-dataset-prediction) from Kaggle. This dataset explores the correlation between mental health and factors such as:
+
+- **Demographic Information:** Age, gender.
+- **Academic Factors:** Academic pressure, study satisfaction, study hours.
+- **Lifestyle Factors:** Sleep duration, dietary habits.
+- **Economic Factors:** Financial stress.
+- **Health Background:** Family history of mental illness.
+
+The dataset serves to identify risk factors for depression, providing insights that could be vital for educational institutions to implement preventive mental health strategies.
+
+## Model Performance
+
+The trained model has achieved the following metrics:
+
+- **Precision:** 0.9803921568627451
+- **Recall:** 0.9803921568627451
+- **AUC (Area Under Curve):** 0.9801960784313726
+
+These metrics indicate a high level of accuracy in predicting whether a student might be suffering from depression based on the input features.
+
+## How to Use the Model
+
+### Prerequisites
+
+- **Pipenv:** For managing Python environments and dependencies.
+- **Docker:** For containerized deployment of the model.
+- **Flask:** For app/webservice.
+
+### Running Locally
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/izaanz/ml-zoomcamp-2024/tree/main/Mid%20Term
+   navigate to the cloned directory
+   ```
+
+2. **Setup Environment:**
+   ```bash
+   pipenv install
+   pipenv shell
+   ```
+
+3. **Run the Model:**
+   ```bash
+   python predict.py
+   ```
+   This will start a local server where you can send requests to get predictions.
+
+### Docker Deployment
+
+To deploy using Docker:
+
+1. **Build the Docker Image:**
+   ```bash
+   docker build -t depression-predictor .
+   ```
+
+2. **Run the Docker Container:**
+   ```bash
+   docker run -p 9696:9696 depression-predictor
+   ```
+
+   The model will be accessible at `http://localhost:9696/predict`.
+
+### Interacting with the Model
+
+- Use `predict_test.py` to send test queries to your model:
+  ```bash
+  python predict_test.py
+  ```
+
+  Modify this script to format your input data as per the model's expectations.
+
+### Deployment on Server
+
+The model is currently deployed and accessible at:
+
+- **Server:** `65.21.157.204`
+- **Port:** `9696`
+- **Endpoint:** `/predict`
+
+You can interact with this deployment using HTTP POST requests to the endpoint with JSON data formatted according to the dataset features.
+
+## Contributions
+
+Contributions to improve the model, enhance feature sets, or optimize the deployment process are welcome. Please submit a pull request with a clear description of your changes.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- Special thanks to Kaggle for providing the dataset.
+
+---
+
+This README provides a comprehensive guide to understanding, using, and deploying the Depression Prediction Model. For any issues or further information, feel free to open an issue in this repository.
