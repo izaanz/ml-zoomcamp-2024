@@ -2,7 +2,7 @@
 
 ## Overview
 
-Depression Prediction Model project, developed as part of ML Zoomcamp 2024 midterm project. This project focuses on predicting the likelihood of depression among students using machine learning techniques. The model leverages a comprehensive dataset to analyze various factors influencing mental health in students.
+Depression Prediction Model project, developed as part of ML Zoomcamp 2024 midterm project. This project focuses on predicting the likelihood of depression among students using machine learning techniques. The model leverages a comprehensive dataset to analyze whether the student is depressed or not given the features.
 
 ## Dataset Description
 
@@ -13,6 +13,10 @@ The model uses the [Depression Student Dataset Prediction](https://www.kaggle.co
 - **Lifestyle Factors:** Sleep duration, dietary habits.
 - **Economic Factors:** Financial stress.
 - **Health Background:** Family history of mental illness.
+
+### Dataset Size
+Given the dataset's small size, with approximately 500 rows, extensive model comparison (like decision trees, XGBoost, etc.) was deemed unnecessary, leading me to use basic linearregression() on initial performance metrics.
+
 
 The dataset serves to identify risk factors for depression, providing insights that could be vital for educational institutions to implement preventive mental health strategies.
 
@@ -70,7 +74,28 @@ To deploy using Docker:
 
    The model will be accessible at `http://localhost:9696/predict`.
 
+This Dockerfile sets up a Python 3.11 environment, installs Pipenv, and copies the required files into the container. It then exposes port 9696 and sets up the Waitress server to serve the model.
+
 ### Interacting with the Model
+
+When testing the model, you can use the following JSON structure for a student's data:
+
+
+```json
+{
+  "gender": "male",
+  "age": 24,
+  "academic_pressure": 2.0,
+  "study_satisfaction": 4.0,
+  "sleep_duration": "5-6 hours",
+  "dietary_habits": "unhealthy",
+  "suicidal_thoughts": 1,
+  "study_hours": 10,
+  "financial_stress": 3,
+  "family_history_of_mental_illness": 0
+}
+```
+Use predict_test.py to send test queries to your model:
 
 - Use `predict_test.py` to send test queries to your model:
   ```bash
