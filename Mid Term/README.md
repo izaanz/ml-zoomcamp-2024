@@ -108,9 +108,11 @@ Use predict_test.py to send test queries to your model:
 
 The model is currently deployed and accessible at:
 
-- **Server:** `65.21.157.204`
+- **Server:** `135.181.46.254`
 - **Port:** `9696`
 - **Endpoint:** `/predict`
+
+- `http://135.181.46.254:9696/predict`
 
 You can interact with this deployment using HTTP POST requests to the endpoint with JSON data formatted according to the dataset features.
 
