@@ -53,6 +53,9 @@ These metrics indicate a high level of accuracy in predicting whether a student 
    ```
 
 3. **Run the Model:**
+   
+   Note: You may have to run `python train.py` if the model_.bin doesn't validate on your end.
+   
    ```bash
    python predict.py
    ```
