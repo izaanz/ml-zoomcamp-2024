@@ -4,7 +4,7 @@
 import requests
 
 
-host = "65.21.157.204"
+host = "135.181.46.254"
 url = f'http://{host}:9696/predict'
 
 student = {
