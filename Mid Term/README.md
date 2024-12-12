@@ -76,6 +76,8 @@ The trained model has achieved the following metrics:
 
 These metrics indicate a high level of accuracy in predicting whether a student might be suffering from depression based on the input features.
 
+![Model's Result](https://github.com/izaanz/ml-zoomcamp-2024/blob/main/Mid%20Term/img/Result_models.png)
+
 ## How to Use the Model
 
 ### Prerequisites
